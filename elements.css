@@ -1,0 +1,24 @@
+/* This file defines how custom elements will look like, setting CSS that breaks main nekoweb site on purpose is prohibited and may result in ban and site deletion! */
+
+.site-box {
+    text-align: center;
+    background-image: url(https://breetea.nekoweb.org/percy.gif);
+    background: url("https://breetea.nekoweb.org/percy.gif");
+    background-repeat: no-repeat;
+    color: #eba678;
+    font-size: 12px;
+}
+.site-box > a > div {
+    background-image: url(https://breetea.nekoweb.org/percy.gif);
+}
+
+.site-box > a > p {
+    color: var(--darkbrown);
+    font-weight: bold;
+}
+.site-box > a > span {
+    color: var(--darkbrown);
+    left: 40;
+}
+
+

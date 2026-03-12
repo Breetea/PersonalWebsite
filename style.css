@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #8c9657;
+    color: #ecebe1; /* #f0e5c7 use this one if u feel chinese */
+    font-family: Roboto Mono, monospace;
+    min-height: 100vh;
+}
+
+/* ── Layout ─────────────────────────────────── */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ── Sidebar ─────────────────────────────────── */
+.sidebar {
+    font-family: Roboto Mono, monospace;
+    width: 190px;
+    min-width: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 180px 16px 32px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    border-right: 2px solid #555;
+    background-color: #473f34;
+    overflow: hidden;
+    padding-top: 7.5%;
+}
+
+.nav-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    background-color: #888;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    z-index: 1;
+}
+.nav-btn:hover {
+    background-color: #bbb;
+    box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.5);
+    color: #111;
+}
+
+.sidebar-text {
+    font-family: Spectral, serif;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: clamp(2rem, 7vh, 10rem);
+    font-weight: 600;
+    margin-bottom: 60px;
+    margin-top: auto;
+    margin-right: 50%;
+    color: #5e5555;
+}
+
+/* ── Main Content ────────────────────────────── */
+.content {
+    flex: 1;
+    position: relative;
+    padding: 60px 80px;
+    overflow: hidden;
+}
+
+/* ── Spinning Background Image ───────────────── */
+.spin-bg {
+    position: fixed;
+    top: 50%;
+    left: calc(190px + 93%);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.60;
+}
+
+.spinner-img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    animation: spin 12s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* ── Sections ────────────────────────────────── */
+section {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 80px;
+}
+
+section h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 16px;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* ── Mute Button ─────────────────────────────── */
+.mute-btn {
+    position: fixed;
+    bottom: 24px;
+    left: 57px;
+    z-index: 100;
+    background-color: #888;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    color: #fff;
+}
+
+.mute-btn:hover {
+    background-color: #bbb;
+    box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* ── Spinning Background Image (sidebar) ─────── */
+.spin-bg-sidebar {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    margin-block: -2px;
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.spinner-img-sidebar {
+    width: clamp(60px, 17vw, 160px);
+    height: clamp(60px, 17vw, 160px);
+    object-fit: contain;
+    animation: spin 12s linear infinite;
+}
+
+/* ── Sidebar Ticker ──────────────────────────── */
+.sidebar-ticker {
+    font-family: Spectral, serif;
+    width: 42px;
+    min-width: 42px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #473f34;
+    border-right: 1px solid #555;
+    z-index: 1;
+}
+
+/* ── Social Icons ────────────────────────────── */
+.socials-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.matrix-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.matrix-row p {
+    margin: 0;
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 10px;
+
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.4);
+}
+
+.sidebar-ticker span {
+    display: block;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: #fff;
+    opacity: 0.35;
+    animation: ticker-scroll 18s linear infinite;
+}
+
+@keyframes ticker-scroll {
+    from { transform: translateY(0%); }
+    to   { transform: translateY(-30%); }
+}
+
+/* ── Things Section ──────────────────────────── */
+.things-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    margin: 8px 0;
+}
+
+.vivian-gif {
+    flex-shrink: 0;
+    width: 200px;
+    height: auto;
+}
