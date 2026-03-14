@@ -34,3 +34,12 @@ document.addEventListener("click", (e) => {
   if (!el) return;
   playSound(el.dataset.sound);
 });
+
+//thanks percy >3
+
+function copyCode(num){
+  if (num == 1){
+    navigator.clipboard.writeText('<a href="https://percycho.nekoweb.org/"><img src= "https://percycho.nekoweb.org/images/percycho-streetlight-button.gif"/></a>');
+    document.getElementById("copynotif").innerHTML = "Button code copied!";
+  }
+}
