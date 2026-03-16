@@ -153,27 +153,32 @@
         <section id="buttons">
             <h2>Buttons</h2>
 
-            <!--# follow class="follow-frame" title="Follow my site" -->
+            <!--# follow class="follow-frame" title="Click here to follow <3" -->
 
             <p>I dont have a button yet but ill make one soon</p> &nbsp;
 
-            <h3> Cool buttons </h3>
-            <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button6.gif"></a><!-- button by s1nez.nekoweb.org -->
-            <a href="https://archive.org"> <img src="assets/internet-archive.png" alt="internet Archive"> </a>
-            <a> <img src="assets/firefox4.gif" alt="Firefox test maybe"> </a>
+                <h3> Cool buttons </h3>
+                <div class="buttons-row">
+                    <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button6.gif"></a>
+                    <a href="https://archive.org"> <img src="assets/internet-archive.png" alt="internet Archive"> </a>
+                    <a> <img src="assets/firefox4.gif" alt="Firefox test maybe"> </a>
+                </div>
 
-            <p> i made the jetbrains icons myself, nab em if u want <3 </p>
-            <a> <img src="assets/jetbrains.gif" alt="Firefox test maybe"> </a>
-            <a> <img src="assets/jetbrainside.gif" alt="Firefox test maybe"> </a>
+                <p> i made the jetbrains icons myself, nab em if u want <3 </p>
+                <div class="buttons-row">
+                    <a> <img src="assets/jetbrains.gif" alt="WebstormJetbrainsButtons"> </a>
+                    <a> <img src="assets/jetbrainside.gif" alt="Jetbrains Button"> </a>
+                </div>
 
-
-
-            <h3>Cool People here, Check out their websites: </h3>&nbsp;
-            <a href="https://percycho.nekoweb.org/"><img src= "https://percycho.nekoweb.org/images/percycho-streetlight-button.gif"/></a>
-            <a href='https://potentia.moe'><img src='https://potentia.moe/img/tm.gif' title='potentia.moe'></a>
-            <a href="https://mars.nekoweb.org/?button" target="_blank"><img src="https://mars.nekoweb.org/assets/buttons/button0.gif" alt="mars' site" width="88" height="31"></a>
-            <a href="https://gucio.nekoweb.org"><img src="https://files.catbox.moe/miez0h.png"></a>
-            <a href="https://jbc.lol"><img src="https://jbc.lol/sitebutton2.png" alt="jb's site" style="image-rendering: pixelated;"/></a> <p> - Thanks for the sitebox tool, you are goated&nbsp; </p>&nbsp;
+                <h3>Cool People here, Check out their websites: </h3>&nbsp;
+                <div class="buttons-row">
+                    <a href="https://percycho.nekoweb.org/"><img src= "https://percycho.nekoweb.org/images/percycho-streetlight-button.gif"/></a>
+                    <a href='https://potentia.moe'><img src='https://potentia.moe/img/tm.gif' title='potentia.moe'></a>
+                    <a href="https://mars.nekoweb.org/?button" target="_blank"><img src="https://mars.nekoweb.org/assets/buttons/button0.gif" alt="mars' site" width="88" height="31"></a>
+                    <a href="https://gucio.nekoweb.org"><img src="https://files.catbox.moe/miez0h.png"></a>
+                    <a href="https://jbc.lol"><img src="https://jbc.lol/sitebutton2.png" alt="jb's site" style="image-rendering: pixelated;"/></a>
+                </div>
+                <p> - Thanks for the sitebox tool, you are goated&nbsp; </p>&nbsp;
 
         </section>
 
@@ -199,7 +204,7 @@
     const bgAudio = document.getElementById('bg-audio');
     const muteBtn = document.getElementById('mute-btn');
 
-    bgAudio.volume = 0.1;
+    bgAudio.volume = 0.05;
 
     // Start music on first interaction
     document.addEventListener('click', () => {
