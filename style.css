@@ -178,6 +178,33 @@ section p {
     z-index: 1;
 }
 
+.sidebar-ticker span {
+    display: block;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: #fff;
+    opacity: 0.35;
+    animation: ticker-scroll 18s linear infinite;
+}
+
+@keyframes ticker-scroll {
+    from { transform: translateY(0%); }
+    to   { transform: translateY(-30%); }
+}
+
+/* ── Right Sidebar Ticker ─────────────────────── */
+.sidebar-ticker--right {
+    border-right: none;
+    border-left: 1px solid #555;
+}
+
+.sidebar-ticker--right span {
+    animation-direction: reverse;
+}
+
 /* ── Social Icons ────────────────────────────── */
 .socials-row {
     display: flex;
@@ -206,29 +233,11 @@ section p {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border-radius: 10px;
-
 }
 
 .social-icon:hover {
     transform: scale(1.15);
     box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.4);
-}
-
-.sidebar-ticker span {
-    display: block;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    white-space: nowrap;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-    color: #fff;
-    opacity: 0.35;
-    animation: ticker-scroll 18s linear infinite;
-}
-
-@keyframes ticker-scroll {
-    from { transform: translateY(0%); }
-    to   { transform: translateY(-30%); }
 }
 
 /* ── Things Section ──────────────────────────── */
