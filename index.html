@@ -153,9 +153,16 @@
         <section id="buttons">
             <h2>Buttons</h2>
 
-            <!--# follow class="follow-frame" title="Click here to follow <3" -->
+            <h3 id="copynotif" style="color: #eba678" ></h3>
 
-            <p>I dont have a button yet but ill make one soon</p> &nbsp;
+            <!--# follow class="follow-frame" title="Click here to follow <3" -->
+            
+                <h3 >My button, Click on it to copy:</h3>
+            <div class="buttons-row"> 
+                <a><img src="assets/Breebutton.gif" onclick="copyCode(1)"> </a>
+
+            </div>
+
 
                 <h3> Cool buttons </h3>
                 <div class="buttons-row">
@@ -165,11 +172,12 @@
                     <a> <img src="assets/e18.gif" alt="Support right to repair"> </a>
                 </div>
 
-                <p> Adding a copy feature soon <3 !!!</p>
-                <p> I made the Jetbrains icons myself, nab em if u want <3 </p>
+                <p> I made the Jetbrains icons myself,if u want to use them just click on them <3 </p>
                 <div class="buttons-row">
-                    <a> <img src="assets/WBjetbrains-madebybreewedtea.gif" alt="WebstormJetbrainsButtons"> </a>
-                    <a> <img src="assets/jetbrainside-madebybreewedtea.gif" alt="Jetbrains Button"> </a>
+                    <a> <img src="assets/WBjetbrains-madebybreewedtea.gif" alt="WebstormJetbrainsButtons" onclick="copyCode(2)">
+
+                    <a> <img src="assets/jetbrainside-madebybreewedtea.gif" alt="Jetbrains Button" onclick="copyCode(3)"> </a>
+
                 </div>
 
                 <h3>Cool People here, Check out their websites: </h3>&nbsp;
@@ -192,7 +200,7 @@
 
 
             <p>This site has <!--# views --> views and <!--# followers --> followers.</p>
-            <p>Last Update: 14.3.2026</p>
+            <p>Last Update: 16.3.2026</p>
 
 
 
@@ -219,5 +227,14 @@
         muteBtn.textContent = bgAudio.muted ? '🔇 Muted' : '🔊 Unmuted';
     });
 </script>
+
+function copyCode(num){
+    if (num == 1){
+        navigator.clipboard.writeText('<a href="https://breetea.nekoweb.org/"><img src= "https://breetea.nekoweb.org/assets/Breebutton.gif"/></a>');
+        document.getElementById("copynotif").innerHTML = "Button code copied!";
+    }
+}
+
+window.copyCode = copyCode;
 </body>
 </html>

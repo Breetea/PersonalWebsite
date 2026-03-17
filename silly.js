@@ -38,8 +38,18 @@ document.addEventListener("click", (e) => {
 //thanks percy >3
 
 function copyCode(num){
-  if (num == 1){
-    navigator.clipboard.writeText('<a href="https://percycho.nekoweb.org/"><img src= "https://percycho.nekoweb.org/images/percycho-streetlight-button.gif"/></a>');
+    if (num == 1){
+        navigator.clipboard.writeText('<a href="https://breetea.nekoweb.org/"><img src= "https://breetea.nekoweb.org/assets/Breebutton.gif"/></a>');
+        document.getElementById("copynotif").innerHTML = "Button code copied!";
+    }
+  if (num == 2){
+    navigator.clipboard.writeText('<a href="https://breetea.nekoweb.org/"><img src= "https://breetea.nekoweb.org/assets/WBjetbrains-madebybreewedtea.gif"/></a>');
+    document.getElementById("copynotif").innerHTML = "Button code copied!";
+  }
+  if (num == 3){
+    navigator.clipboard.writeText('<a href="https://breetea.nekoweb.org/"><img src= "https://breetea.nekoweb.org/assets/jetbrainside-madebybreewedtea.gif"/></a>');
     document.getElementById("copynotif").innerHTML = "Button code copied!";
   }
 }
+
+window.copyCode = copyCode;
