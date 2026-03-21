@@ -9,6 +9,8 @@ const sounds = {
   cancel: new Audio("assets/audio/Niercancel.wav"),
   switch: new Audio("assets/audio/Nierswitch.wav"),
   mahaline: new Audio("assets/audio/Mahaline.mp3"),
+  catalyst: new Audio("assets/audio/Synthesis_Catalyst.mp3"),
+  aaaa: new Audio("assets/audio/Aaah~.mp3"),
 };
 
 // Optional: reduce perceived delay on first play

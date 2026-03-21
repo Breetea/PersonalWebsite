@@ -36,16 +36,24 @@
         <h2>Website is still big time in the making!!!!!</h2>
         <p>Here you can find the changelog for The Breewery, detailing all the updates and changes made to the project.</p>
 
+        <h2>Date 21.3.2026</h2>
+        ul>
+            <li>Added more songs </li>
+            <li>Added more website buttons</li>
+            <li>Added custom website cursor</li>
+            <li>New easters eggs yes vivian</li>
+
+
         <h2>Date 17.3.2026</h2>
         <ul>
             <li>Added more ccs into the changelog website <3</li>
             <li>Added more website buttons</li>
             <li>Implemented a copy button fuction in buttons </li>
             <li>New easter eggs</li>
-
+        </ul>
         <h2>Date 16.3.2026</h2>
         <ul>
-            <li>Added changlog file</li>
+            <li>Added changelog file</li>
             <li>Added more website buttons</li>
             <li>Fixed layout on buttons</li>
         </ul>
@@ -69,5 +77,25 @@
     </div>
 
 </div>
+
+<script src="silly.js" type="module"></script>
+<script>
+    const bgAudio = document.getElementById('bg-audio');
+    const muteBtn = document.getElementById('mute-btn');
+
+    bgAudio.volume = 0.05;
+
+    // Start music on first interaction
+    document.addEventListener('click', () => {
+        if (bgAudio.paused) bgAudio.play().catch(() => {});
+    }, { once: true });
+
+    // Mute toggle
+    muteBtn.addEventListener('click', () => {
+        bgAudio.muted = !bgAudio.muted;
+        muteBtn.textContent = bgAudio.muted ? '🔇 Muted' : '🔊 Unmuted';
+    });
+</script>
+
 </body>
 </html>
