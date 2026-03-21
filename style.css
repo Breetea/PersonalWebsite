@@ -6,11 +6,16 @@
 
 body {
     background-color: #8c9657;
-    color: #ecebe1; /* #f0e5c7 use this one if u feel chinese */
+    color: #37312b; /* #f0e5c7 use this one if u feel chinese, #ecebe1 */
     font-family: Roboto Mono, monospace;
     min-height: 100vh;
+    /*cursor: url('assets/cursor/cursor.cur'), auto*/
 }
 
+/*a, button, img {
+    cursor: url('assets/cursor/hand_point.cur'), pointer;
+}
+*/
 /* ── Layout ─────────────────────────────────── */
 .layout {
     display: flex;
