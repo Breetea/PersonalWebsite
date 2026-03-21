@@ -65,24 +65,24 @@
 
             <div class="socials-row">
                 <a href="https://github.com/BreeTea" target="_blank" data-sound="confirm">
-                    <img src="assets/github.png" alt="Github Page" class="social-icon">
+                    <img src="assets/icons/github.png" alt="Github Page" class="social-icon">
                 </a>
                 <a href="https://x.com/BreewedTea" target="_blank" data-sound="confirm">
-                    <img src="assets/x.png" alt="X / Twitter" class="social-icon">
+                    <img src="assets/icons/x.png" alt="X / Twitter" class="social-icon">
                 </a>
                 <a href="https://steamcommunity.com/id/Breetea/" target="_blank" data-sound="confirm">
-                    <img src="assets/steam.png" alt="Steam" class="social-icon">
+                    <img src="assets/icons/steam.png" alt="Steam" class="social-icon">
                 </a>
                 <a href="https://myanimelist.net/profile/Breetea" target="_blank" data-sound="confirm">
-                    <img src="assets/myanimelist_logo_icon_248409.png" alt="MyAnimeList" class="social-icon">
+                    <img src="assets/icons/myanimelist_logo_icon_248409.png" alt="MyAnimeList" class="social-icon">
                 </a>
             </div>
             <div class="matrix-row">
-                <img src="assets/Matrix_icon.png" alt="Matrix" class="social-icon">
+                <img src="assets/icons/Matrix_icon.png" alt="Matrix" class="social-icon">
                 <H3>: @teauloa:matrix.org</H3>
             </div>
             <div class="matrix-row">
-                <img src="assets/discord_icon_136688.png" alt="Discord" class="social-icon">
+                <img src="assets/icons/discord_icon_136688.png" alt="Discord" class="social-icon">
                 <H3>: breewedtea</H3>
             </div>
 
@@ -99,7 +99,7 @@
                     <p> But im very hyped for marathon, pragmata and I wanna buy resident evil 9 but ill see</p>
 
                 </div>
-                <img src="assets/vivian-vivian-zzz.gif" alt="vivian whereare u bruh" class="vivian-gif">
+                <img src="assets/vivian-vivian-zzz.gif" alt="vivian whereare u bruh" class="vivian-gif" data-sound="aaaa">
             </div>
             <h3 style="font-size: 200% ">Cars/Trains</h3>
             <p> Cars are amazing but trains equally too, shits cool af </p>
@@ -115,7 +115,9 @@
             <p> I would love to mention my headphones but im planing to get new ones so imma update that later</p>
 
             &nbsp;<h4> Networking </h4>
-            <p> I love messing arround with networking stuff, mostly did Cisco but also tried out mikrotik devices </p>&nbsp;
+            <p> I love messing arround with networking stuff, mostly did Cisco but also tried out mikrotik devices </p>
+            
+
 
 
 
@@ -145,7 +147,7 @@
 
             &nbsp;<h3>Check out my last fm page:</h3>
             <a href="https://www.last.fm/user/BreewedTea" target="_blank" data-sound="confirm">
-                <img src="assets/lastfmlogo1_83690.png" alt="Last.fm" class="social-icon">
+                <img src="assets/icons/lastfmlogo1_83690.png" alt="Last.fm" class="social-icon">
             </a>
 
         </section>
@@ -159,7 +161,7 @@
             
                 <h3 >My button, Click on it to copy:</h3>
             <div class="buttons-row"> 
-                <a><img src="assets/Breebutton.gif" onclick="copyCode(1)"> </a>
+                <a><img src="assets/buttons/Breebutton.gif" onclick="copyCode(1)"> </a>
 
             </div>
 
@@ -167,16 +169,16 @@
                 <h3> Cool buttons </h3>
                 <div class="buttons-row">
                     <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button6.gif"></a>
-                    <a href="https://archive.org"> <img src="assets/internet-archive.png" alt="internet Archive"> </a>
-                    <a href="https://www.firefox.com" target="_blank"> <img src="assets/firefox4.gif" alt="Firefox icon"> </a>
-                    <a> <img src="assets/e18.gif" alt="Support right to repair"> </a>
+                    <a href="https://archive.org"> <img src="assets/buttons/internet-archive.png" alt="internet Archive"> </a>
+                    <a href="https://www.firefox.com" target="_blank"> <img src="assets/buttons/firefox4.gif" alt="Firefox icon"> </a>
+                    <a> <img src="assets/buttons/e18.gif" alt="Support right to repair"> </a>
                 </div>
 
                 <p> I made the Jetbrains icons myself,if u want to use them just click on them <3 </p>
                 <div class="buttons-row">
-                    <a> <img src="assets/WBjetbrains-madebybreewedtea.gif" alt="WebstormJetbrainsButtons" onclick="copyCode(2)">
+                    <a> <img src="assets/buttons/WBjetbrains-madebybreewedtea.gif" alt="WebstormJetbrainsButtons" onclick="copyCode(2)">
 
-                    <a> <img src="assets/jetbrainside-madebybreewedtea.gif" alt="Jetbrains Button" onclick="copyCode(3)"> </a>
+                    <a> <img src="assets/buttons/jetbrainside-madebybreewedtea.gif" alt="Jetbrains Button" onclick="copyCode(3)"> </a>
 
                 </div>
 
@@ -201,6 +203,8 @@
 
             <p>This site has <!--# views --> views and <!--# followers --> followers.</p>
             <p>Last Update: 16.3.2026</p>
+            &nbsp;
+            <img src="assets/love-my-friends-internet-friends.gif" class="vivian-gif">
 
 
 
@@ -227,14 +231,5 @@
         muteBtn.textContent = bgAudio.muted ? '🔇 Muted' : '🔊 Unmuted';
     });
 </script>
-
-function copyCode(num){
-    if (num == 1){
-        navigator.clipboard.writeText('<a href="https://breetea.nekoweb.org/"><img src= "https://breetea.nekoweb.org/assets/Breebutton.gif"/></a>');
-        document.getElementById("copynotif").innerHTML = "Button code copied!";
-    }
-}
-
-window.copyCode = copyCode;
 </body>
 </html>
