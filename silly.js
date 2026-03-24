@@ -1,7 +1,5 @@
 // audio.js
 // staight up used ai cuz fuck JS
-
-
 // Map button -> audio file in /assets/audio
 const sounds = {
   click: new Audio("assets/audio/Nierclick.wav"),
