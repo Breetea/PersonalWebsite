@@ -580,3 +580,42 @@ section p {
     text-align: right;
     font-family: Roboto Mono, monospace;
 }
+
+/* ── Not Found Section (from image) ──────────── */
+.not-found-box {
+    background-color: #37312b; /* or #e61e14 as in the image */
+    /* border-radius: 50px; */
+    padding: 60% 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.not-found-box h2, .not-found-box h3 {
+    color: #f0e5c7;
+    margin: 0;
+    font-weight: 400;
+}
+
+.not-found-box .nav-btn {
+    background-color: transparent;
+    color: #f0e5c7;
+    border: none;
+    box-shadow: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.not-found-box .nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    transform: scale(1.05);
+}
