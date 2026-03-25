@@ -15,16 +15,15 @@
 
 <audio id="bg-audio" src="assets/audio/Mahaline.mp3" loop></audio>
 
-<div class="layout">
+    <div class="layout">
 
-    <!-- Mute button -->
-    <button id="mute-btn" class="mute-btn" title="Toggle music" style="font-family: Roboto Mono, monospace">🔊 Unmuted</button>
+            <!-- Audio Player removed from here - now in sidebar-ticker -->
 
-    <!-- Sticky Sidebar -->
-            <!-- Ticker strip (separate from sidebar nav) -->
-        <div class="sidebar-ticker" aria-hidden="true">
-            <span>The Breewery ✦ The Breewery ✦ A new world is always on the horizon ✦ The Breewery ✦ Vieme vytvoriť budúcnosť pre každého ✦ The Breewery ✦ Het leven gaat verder, maar blijf nooit stilstaan bij dingen uit het verleden ✦ The Breewery ✦ VyThe Breewery ✦ A new world is always on the horizon ✦ The Breewery ✦ Vieme vytvoriť budúcnosť pre každého ✦ The Breewery ✦tvor dačo nové každý deň ✦ The Breewery ✦ Organize your life and see clearly ✦ The Breewery ✦ The Breewery ✦ </span>
-        </div>
+        <!-- Sticky Sidebar -->
+                <!-- Ticker strip (separate from sidebar nav) -->
+            <div class="sidebar-ticker" aria-hidden="true">
+                <span>The Breewery ✦ The Breewery ✦ A new world is always on the horizon ✦ The Breewery ✦ Vieme vytvoriť budúcnosť pre každého ✦ The Breewery ✦ Het leven gaat verder, maar blijf nooit stilstaan bij dingen uit het verleden ✦ The Breewery ✦ VyThe Breewery ✦ A new world is always on the horizon ✦ The Breewery ✦ Vieme vytvoriť budúcnosť pre každého ✦ The Breewery ✦tvor dačo nové každý deň ✦ The Breewery ✦ Organize your life and see clearly ✦ The Breewery ✦ The Breewery ✦ </span>
+            </div>
 
         <!-- Sticky Sidebar -->
         <nav class="sidebar">
@@ -41,6 +40,26 @@
             <a href="https://breetea.atabook.org/" target="_blank" class="nav-btn" data-sound="switch">Guestbook</a>
 
             <p class="sidebar-text"> New world </p>
+            
+            <!-- Audio Player in Sidebar -->
+            <div class="audio-player-sidebar">
+                <div class="song-title-sidebar" id="song-title">Mahaline</div>
+        
+                <div class="player-controls-sidebar">
+                    <button id="prev-btn" class="player-btn-sidebar" title="Previous song">◀</button>
+                    <button id="play-btn" class="player-btn-sidebar play-toggle-sidebar" title="Play/Pause">▶</button>
+                    <button id="next-btn" class="player-btn-sidebar" title="Next song">▶▶</button>
+                </div>
+        
+                <div class="progress-bar-container-sidebar">
+                    <input type="range" id="progress-bar" class="progress-bar-sidebar" min="0" max="100" value="0">
+                </div>
+        
+                <div class="volume-controls-sidebar">
+                    <input type="range" id="volume-slider" class="volume-slider-sidebar" min="0" max="100" value="5" title="Volume">
+                    <span id="volume-display" class="volume-display-sidebar">5%</span>
+                </div>
+            </div>
         </nav>
 
     <!-- Main Content -->
@@ -171,7 +190,7 @@
                     <a><img src="assets/buttons/seedyourtorrents.gif" alt="seedyourtorrents"> </a>
                 </div>
 
-                <p> I made the Jetbrains icons myself,if u want to use them just click on them <3 </p>
+                <p> I made the Jetbrains icons myself,if u want to use them. Click on them <3 </p>
                 <div class="buttons-row">
                     <a> <img src="assets/buttons/WBjetbrains-madebybreewedtea.gif" alt="WebstormJetbrainsButtons" onclick="copyCode(2)"></a>
 
@@ -184,6 +203,7 @@
                     <a href="https://percycho.nekoweb.org/" target="_blank"><img src= "https://percycho.nekoweb.org/images/percycho-streetlight-button.gif" alt="percy button"/></a>
                     <a href='https://potentia.moe' target="_blank"><img src='https://potentia.moe/img/tm.gif' title='potentia.moe' alt="potentia button"></a>
                     <a href="https://districts.nekoweb.org/"><img alt="Nekoweb Districts" src="https://districts.nekoweb.org/img/districts002.png"></a>
+                    <a href="https://jockstar.nekoweb.org/" > <img alt="Jockstar websute button" src="https://jockstar.nekoweb.org/buttons/jsb.gif"> </a>
                     <a href="https://mars.nekoweb.org/?button" target="_blank"><img src="https://mars.nekoweb.org/assets/buttons/button0.gif" alt="mars' site" width="88" height="31"></a>
                     <a href="https://gucio.nekoweb.org" target="_blank" ><img src="https://files.catbox.moe/miez0h.png" alt="catbox button"></a>
                     <a href="https://jbc.lol" target="_blank"><img src="https://jbc.lol/sitebutton2.png" alt="jb's site" style="image-rendering: pixelated;"/></a>
