@@ -1,7 +1,16 @@
+@font-face {
+    font-family: ' 5by7 ';
+    src: url('assets/font/5by7.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+h2{
+    font-family: " 5by7 ";
 }
 
 body {
