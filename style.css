@@ -37,8 +37,9 @@ body {
     height: 100vh;
     border-right: 2px solid #555;
     background-color: #473f34;
-    overflow: hidden;
-    padding-top: 7.5%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: clamp(80px, calc(17vw + 20px), 180px);
 }
 
 .sidebar-header,
@@ -77,8 +78,8 @@ body {
     font-family: Spectral, serif;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    font-size: clamp(1rem, 5.5vh, 7rem);
-    font-weight: 600;
+    font-size: clamp(1rem, 4vh, 7rem);
+    font-weight: 400;
     margin-bottom: 30px;
     margin-top: auto;
     margin-right: 50%;
@@ -692,6 +693,7 @@ section p {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        order: 3;
         flex: 0 0 36px;
         width: 36px;
         height: 36px;
@@ -709,6 +711,10 @@ section p {
         outline-offset: 3px;
     }
 
+    .sidebar:not(.menu-ready) .sidebar-toggle {
+        display: none;
+    }
+
     .sidebar-menu {
         display: grid;
         grid-template-rows: 1fr;
@@ -723,6 +729,11 @@ section p {
         gap: 12px;
         min-height: 0;
         overflow: hidden;
+        padding-top: 0;
+        transition: padding-top 0.35s ease;
+    }
+
+    .sidebar.is-open .sidebar-menu-inner {
         padding-top: 12px;
     }
 
@@ -749,6 +760,10 @@ section p {
         transition: grid-template-rows 0.35s ease, opacity 0.2s ease, visibility 0s linear 0.35s;
     }
 
+    .sidebar.menu-ready:not(.is-open) .sidebar-menu-inner {
+        padding-top: 0;
+    }
+
     .content {
         min-width: 0;
         padding: 32px 20px;
@@ -760,7 +775,8 @@ section p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .sidebar-menu {
+    .sidebar-menu,
+    .sidebar-menu-inner {
         transition: none;
     }
 }
