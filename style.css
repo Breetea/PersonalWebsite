@@ -41,22 +41,34 @@ body {
     padding-top: 7.5%;
 }
 
+.sidebar-header,
+.sidebar-menu,
+.sidebar-menu-inner,
+.sidebar-menu-links {
+    display: contents;
+}
+
+.sidebar-toggle {
+    display: none;
+}
+
 .nav-btn {
     display: block;
     width: 100%;
     padding: 10px 16px;
-    background-color: #f0e5c7; /*#888*/
+    background-color: #d7d3cc; /*#888 #f0e5c7;*/
     color: #231d1d;
     text-decoration: none;
-    text-align: center;
-    border-radius: 999px;
+    text-align: left;
+    border-radius: 5px;
     font-size: 0.95rem;
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
     position: relative;
     z-index: 1;
+    order: 1;
 }
 .nav-btn:hover {
-    background-color: #bbb;
+    background-color: #e7dede;
     box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.5);
     color: #111;
 }
@@ -70,7 +82,8 @@ body {
     margin-bottom: 30px;
     margin-top: auto;
     margin-right: 50%;
-    color: #5e5555;
+    color: #d5c7c7;
+    order: 2;
 }
 
 /* ── Main Content ────────────────────────────── */
@@ -201,6 +214,7 @@ section p {
 }
 
 /* ── Audio Player in Sidebar ─────────────────── */
+/*TODO - Rework the new design of the player in the corner */
 .audio-player-sidebar {
     width: 100%;
     background-color: rgb(240, 229, 199);
@@ -214,6 +228,7 @@ section p {
     position: relative;
     z-index: 2;
     margin-bottom: 20px;
+    order: 3;
 }
 
 .song-title-sidebar {
@@ -434,11 +449,11 @@ section p {
 }
 
 .song-title {
-    text-align: center;
+    text-align: left;
     font-size: 1.4rem;
     font-weight: 500;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-family: Roboto Mono, monospace;
     letter-spacing: 1px;
 }
@@ -618,4 +633,134 @@ section p {
     background-color: rgba(0, 0, 0, 0.1);
     box-shadow: none;
     transform: scale(1.05);
+}
+
+@media (max-width: 700px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar-ticker {
+        display: none;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        min-height: 0;
+        position: relative;
+        padding: 8px 10px;
+        border-right: 0;
+        border-bottom: 2px solid #555;
+        overflow: visible;
+        gap: 0;
+    }
+
+    .sidebar-header {
+        display: flex;
+        position: relative;
+        align-items: center;
+        gap: 4px;
+        min-height: 48px;
+        padding-left: 46px;
+    }
+
+    .spin-bg-sidebar {
+        top: 50%;
+        left: 0;
+        margin: 0;
+        transform: translateY(-50%);
+    }
+
+    .spinner-img-sidebar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .sidebar-text {
+        writing-mode: horizontal-tb;
+        text-orientation: initial;
+        font-size: clamp(0.9rem, 4vw, 1.25rem);
+        margin: 0;
+        flex: 1;
+        min-width: 0;
+        white-space: nowrap;
+    }
+
+    .sidebar-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 5px;
+        background-color: #d7d3cc;
+        color: #231d1d;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+
+    .sidebar-toggle:focus-visible {
+        outline: 2px solid #f0e5c7;
+        outline-offset: 3px;
+    }
+
+    .sidebar-menu {
+        display: grid;
+        grid-template-rows: 1fr;
+        opacity: 1;
+        visibility: visible;
+        transition: grid-template-rows 0.35s ease, opacity 0.2s ease, visibility 0s;
+    }
+
+    .sidebar-menu-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-height: 0;
+        overflow: hidden;
+        padding-top: 12px;
+    }
+
+    .sidebar-menu-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sidebar-menu .nav-btn {
+        order: 0;
+    }
+
+    .sidebar-menu .audio-player-sidebar {
+        order: 0;
+        margin: 0 0 4px;
+    }
+
+    .sidebar.menu-ready:not(.is-open) .sidebar-menu {
+        grid-template-rows: 0fr;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: grid-template-rows 0.35s ease, opacity 0.2s ease, visibility 0s linear 0.35s;
+    }
+
+    .content {
+        min-width: 0;
+        padding: 32px 20px;
+    }
+
+    .spin-bg {
+        left: 93%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sidebar-menu {
+        transition: none;
+    }
 }

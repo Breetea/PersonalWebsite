@@ -2,10 +2,7 @@
 
 ## Website for myself hosted on Nekoweb
 
-Uses basic web technologies HTML, CSS , JS.
-
 ## Structure
-### Files
 
 - index.html
   Content and stucture of the website
@@ -19,7 +16,8 @@ Uses basic web technologies HTML, CSS , JS.
 - silly.js
   Contains JS for audio playback and copy link code
 
+  Nothing really amaizng lol
 
 ## Credits
 
-Made by Breetea in Slovakia
+Made by Breetea in Slovakia <3
