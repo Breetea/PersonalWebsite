@@ -14,15 +14,9 @@
 </head>
 <body>
 
- <!--TODO add a new sound effect for the website, dont use mahaline or the other one -->
-<audio id="bg-audio" src="assets/audio/Mahaline.mp3" loop></audio>
-
     <div class="layout">
-
-            <!-- Audio Player removed from here - now in sidebar-ticker -->
-
         <!-- Sticky Sidebar -->
-                <!-- Ticker strip (separate from sidebar nav) -->
+
             <div class="sidebar-ticker" aria-hidden="true">
                 <span>The Breewery ✦ The Breewery ✦ A new world is always on the horizon ✦ The Breewery ✦ Vieme vytvoriť budúcnosť pre každého ✦ The Breewery ✦ Het leven gaat verder, maar blijf nooit stilstaan bij dingen uit het verleden ✦ The Breewery ✦ VyThe Breewery ✦ A new world is always on the horizon ✦ The Breewery ✦ Vieme vytvoriť budúcnosť pre každého ✦ The Breewery ✦tvor dačo nové každý deň ✦ The Breewery ✦ Organize your life and see clearly ✦ The Breewery ✦ The Breewery ✦ </span>
             </div>
@@ -49,24 +43,9 @@
                         <a href="https://breetea.atabook.org/" target="_blank" class="nav-btn">Guestbook</a>
                     </div>
 
-                    <!-- TODO: Completly rework the player, New icons and Design needed, Could add a new cursor fior funsies-->
-                    <div class="audio-player-sidebar">
-                        <div class="song-title-sidebar" id="song-title">Mahaline</div>
-
-                        <div class="player-controls-sidebar">
-                            <button id="prev-btn" class="player-btn-sidebar" title="Previous song">◀</button>
-                            <button id="play-btn" class="player-btn-sidebar play-toggle-sidebar" title="Play/Pause">▶</button>
-                            <button id="next-btn" class="player-btn-sidebar" title="Next song">▶▶</button>
-                        </div>
-
-                        <div class="progress-bar-container-sidebar">
-                            <input type="range" id="progress-bar" class="progress-bar-sidebar" min="0" max="100" value="0">
-                        </div>
-
-                        <div class="volume-controls-sidebar">
-                            <input type="range" id="volume-slider" class="volume-slider-sidebar" min="0" max="100" value="5" title="Volume">
-                            <span id="volume-display" class="volume-display-sidebar">5%</span>
-                        </div>
+                    <div class="audio-mute-controls">
+                        <button id="music-mute-btn" class="mute-toggle-btn" title="Mute/Unmute Music">🔊 Music</button>
+                        <button id="sfx-mute-btn" class="mute-toggle-btn" title="Mute/Unmute SFX">🔔 SFX</button>
                     </div>
                 </div>
             </div>
@@ -118,8 +97,10 @@
             <p> New info soon</p>
             <div>  <img src="assets/vivian-vivian-zzz.gif" alt="vivian whereare u bruh" class="vivian-gif" data-sound="aaaa"> </div>
             <!--TODO add a bit better formating for projects tab -->
+
             <h3 style="font-size: 200% "> Tauri/GPUI app for printing</h3>
             <p> Desktop app for easy printing templates for DVD,CD and pretty much anything</p>>
+            <p> More details will be on the github page soon.....</p>
 
 
 
@@ -128,8 +109,6 @@
 
         <section id="buttons">
             <h2>Buttons</h2>
-
-
 
             <!--# follow class="follow-frame" title="Click here to follow <3" -->
             
@@ -184,10 +163,10 @@
 
         <section id="credits">
             <h2>Footer</h2>
-            <p>@2026 Breetea</p>
+            <p> @2026 Breetea</p>
             <p> Sound Effects are from Nier Automata, Copyright Platinum Games Inc. </p>
             <p> Font 5by7 made by Peter Wiegel (amazing font <3)</p>
-            <p> The background music is called Mahaline from Girls Frontline made by Vanguard Sound</p>&nbsp;
+            <p> The background music is New Eden ambient tracks </p>&nbsp;
 
 
             <p>This site has <!--# views --> views and <!--# followers --> followers.</p>
@@ -204,22 +183,5 @@
 
 <script src="navigation.js" defer></script>
 <script src="silly.js" type="module"></script>
-<script>
-    const bgAudio = document.getElementById('bg-audio');
-    const muteBtn = document.getElementById('mute-btn');
-
-    bgAudio.volume = 0.05;
-
-    // Start music on first interaction
-    document.addEventListener('click', () => {
-        if (bgAudio.paused) bgAudio.play().catch(() => {});
-    }, { once: true });
-
-    // Mute toggle
-    muteBtn.addEventListener('click', () => {
-        bgAudio.muted = !bgAudio.muted;
-        muteBtn.textContent = bgAudio.muted ? '🔇 Muted' : '🔊 Unmuted';
-    });
-</script>
 </body>
 </html>
