@@ -51,7 +51,7 @@ function copyCode(num){
 
 window.copyCode = copyCode;
 
-// Audio player functionality
+// Audio player functionality LN 54 to bottom
 const bgAudio = document.getElementById('bg-audio');
 const songTitle = document.getElementById('song-title');
 const playBtn = document.getElementById('play-btn');

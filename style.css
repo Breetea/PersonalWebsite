@@ -15,7 +15,7 @@ h2{
 
 body {
     background-color: #8c9657;
-    color: #37312b; /* #f0e5c7 use this one if u feel chinese, #ecebe1 */
+    color: #211c18; /* #f0e5c7 use this one if u feel chinese, #ecebe1, #37312b - black grey*/
     font-family: Roboto Mono, monospace;
     min-height: 100vh;
     /*cursor: url('assets/cursor/cursor.cur'), auto*/
@@ -175,7 +175,7 @@ section p {
     position: absolute;
     top: 1%;
     left: 50%;
-    margin-block: -2px;
+    margin-block: -3px;
     transform: translateX(-50%);
     z-index: 0;
     pointer-events: none;
@@ -385,7 +385,7 @@ section p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     margin: 8px 0;
 }
 
@@ -438,6 +438,38 @@ section p {
     align-items: center;
     gap: 8px;
     margin: 8px 0;
+}
+
+/* ── Responsive Friends/Websites Grid ─────────── */
+/* On wide screens: flex row (same as other button rows)      */
+/* On narrow screens: switches to a tidy auto-fill grid       */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+    gap: 8px;
+    align-items: center;
+}
+
+.buttons-grid a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-grid img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Above 600 px: go back to a plain wrapping flex row */
+@media (min-width: 600px) {
+    .buttons-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
 }
 
 

@@ -14,6 +14,7 @@
 </head>
 <body>
 
+ <!--TODO add a new sound effect for the website, dont use mahaline or the other one -->
 <audio id="bg-audio" src="assets/audio/Mahaline.mp3" loop></audio>
 
     <div class="layout">
@@ -39,16 +40,16 @@
             </div>
             <div class="sidebar-menu" id="sidebar-menu">
                 <div class="sidebar-menu-inner">
-                    <div class="sidebar-menu-links">
-                        <a href="#about" class="nav-btn" data-sound="switch">About Me</a>
-                        <a href="#projects" class="nav-btn" data-sound="switch">Projects</a>
-                        <a href="#buttons" class="nav-btn" data-sound="switch">Buttons</a>
-                        <a href="#credits" class="nav-btn" data-sound="switch">Credits</a>
-                        <a href="changelog.html" class="nav-btn" data-sound="switch">Changelogs</a>
-                        <a href="https://breetea.atabook.org/" target="_blank" class="nav-btn" data-sound="switch">Guestbook</a>
+                    <div class="sidebar-menu-links" data-sound="click">
+                        <a href="#about" class="nav-btn" >About Me</a>
+                        <a href="#projects" class="nav-btn" >Projects</a>
+                        <a href="#buttons" class="nav-btn" >Buttons</a>
+                        <a href="#credits" class="nav-btn" >Credits</a>
+                        <a href="changelog.html" class="nav-btn" >Changelogs</a>
+                        <a href="https://breetea.atabook.org/" target="_blank" class="nav-btn">Guestbook</a>
                     </div>
 
-                    <!-- TODO: Completly rework the player, New icons and Design needed -->
+                    <!-- TODO: Completly rework the player, New icons and Design needed, Could add a new cursor fior funsies-->
                     <div class="audio-player-sidebar">
                         <div class="song-title-sidebar" id="song-title">Mahaline</div>
 
@@ -78,33 +79,31 @@
         </div>
 
         <section id="about">
-            <h1>About Me</h1>
             <h2>Welcome to the website!</h2>
+
+            <h2>The website is heavily gutted rn and is WIP </h2>
             <p>My name is Bree, </p>
             <p>he/him</p>
             &nbsp;
             <h3>Enjoy your time here!</h3>&nbsp;
-            <h2> The website is heavily gutted rn and is WIP</h2>
-
-
-
             &nbsp;
             <h3> My socials: </h3> &nbsp;
 
-            <div class="socials-row">
-                <a href="https://github.com/BreeTea" target="_blank" data-sound="confirm">
+            <div class="socials-row" data-sound="cancel">
+                <a href="https://github.com/BreeTea" target="_blank">
                     <img src="assets/icons/github.png" alt="Github Page" class="social-icon">
                 </a>
-                <a href="https://steamcommunity.com/id/Breetea/" target="_blank" data-sound="confirm">
+                <a href="https://steamcommunity.com/id/Breetea/" target="_blank" >
                     <img src="assets/icons/steam.png" alt="Steam" class="social-icon">
                 </a>
-                <a href="https://myanimelist.net/profile/Breetea" target="_blank" data-sound="confirm">
+                <a href="https://myanimelist.net/profile/Breetea" target="_blank" >
                     <img src="assets/icons/myanimelist_logo_icon_248409.png" alt="MyAnimeList" class="social-icon">
                 </a>
-                <a href="https://www.last.fm/user/BreewedTea" target="_blank" data-sound="confirm">
+                <a href="https://www.last.fm/user/BreewedTea" target="_blank" >
                     <img src="assets/icons/lastfmlogo1_83690.png" alt="Last.fm" class="social-icon">
                 </a>
             </div>
+
 
 
         </section>
@@ -118,7 +117,7 @@
             <p> I have a still functioning PS2 but unused, i wanna turn it into a framework desktop kind of thing</p>
             <p> New info soon</p>
             <div>  <img src="assets/vivian-vivian-zzz.gif" alt="vivian whereare u bruh" class="vivian-gif" data-sound="aaaa"> </div>
-
+            <!--TODO add a bit better formating for projects tab -->
             <h3 style="font-size: 200% "> Tauri/GPUI app for printing</h3>
             <p> Desktop app for easy printing templates for DVD,CD and pretty much anything</p>>
 
@@ -130,50 +129,52 @@
         <section id="buttons">
             <h2>Buttons</h2>
 
-            <h3 id="copynotif" style="color: #eba678" ></h3>
+
 
             <!--# follow class="follow-frame" title="Click here to follow <3" -->
             
                 <h3 >My button, Click on it to copy:</h3>
             <div class="buttons-row"> 
-                <a><img src="assets/buttons/Breebutton.gif" onclick="copyCode(1)" alt="Breetea Button">  </a>
-
+                <a><img src="assets/buttons/Breebutton.gif" onclick="copyCode(1)" alt="Breetea Button" data-sound="confirm">  </a>
+               <br>  <h3 id="copynotif" style="color: #0039a3" ></h3> <!--#eba687 -->
             </div>
 
 
                 <h3> Cool buttons </h3>
-                <div class="buttons-row">
-                    <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button6.gif" alt="official Nekoweb button"></a>
-                    <a href="https://archive.org"> <img src="assets/buttons/internet-archive.png" alt="internet Archive"> </a>
+                <div class="buttons-row" data-sound="cancel">
+                    <a href="https://nekoweb.org/" target="_blank"><img src="https://nekoweb.org/assets/buttons/button6.gif" alt="official Nekoweb button"></a>
+                    <a href="https://archive.org" target="_blank"> <img src="assets/buttons/internet-archive.png" alt="internet Archive"> </a>
                     <a href="https://www.firefox.com" target="_blank"> <img src="assets/buttons/firefox4.gif" alt="Firefox icon"> </a>
                     <a> <img src="assets/buttons/e18.gif" alt="Support right to repair"> </a>
                     <a><img src="assets/buttons/aLNEopZsGj-88.webp" alt="trans rights"> </a>
-                    <a href="https://www.slsknet.org" ><img src="assets/buttons/soulseek.gif" alt="soulseek button"> </a>
+                    <a href="https://www.slsknet.org" target="_blank" ><img src="assets/buttons/soulseek.gif" alt="soulseek button"> </a>
                     <a><img src="assets/buttons/seedyourtorrents.gif" alt="seedyourtorrents"> </a>
                     <a href="https://lucida.to" target="_blank"><img src="https://lucida.to/buttons/88x31.gif" alt="lucida website"></a>
-                    <a href=""><img src="https://opiates.garden/assets/button2.png" alt="tuff"></a>
+                    <a><img src="https://opiates.garden/assets/button2.png" alt="tuff"></a>
 
 
                 </div>
 
-                <p> I made the Jetbrains icons myself,if u want to use them. Click on them <3 </p>
-                <div class="buttons-row">
+                <p> I made the JetBrains icons myself, feel free to use em. Click on them to copy <3 </p>
+                <div class="buttons-row" data-sound="confirm">
                     <a> <img src="assets/buttons/WBjetbrains-madebybreewedtea.gif" alt="WebstormJetbrainsButtons" onclick="copyCode(2)"></a>
 
-                    <a> <img src="assets/buttons/jetbrainside-madebybreewedtea.gif" alt="Jetbrains Button" onclick="copyCode(3)"> </a>
+                    <a> <img src="assets/buttons/jetbrainside-madebybreewedtea.gif" alt="JetBrains Button" onclick="copyCode(3)"> </a>
 
                 </div>
 
-                <h3>Cool People here, check out their stuff: </h3>&nbsp;
-                <div class="buttons-row">
-                    <a href="https://percycho.nekoweb.org/" target="_blank"><img src= "https://percycho.nekoweb.org/images/percycho-streetlight-button.gif" alt="percy button"/></a>
+                <h3>Cool People/Websites here, check out their stuff: </h3>&nbsp;
+                <div class="buttons-row buttons-grid" data-sound="cancel">
+                    <a href="https://percycho.nekoweb.org/" target="_blank"  ><img src= "https://percycho.nekoweb.org/images/percycho-streetlight-button.gif" alt="percy button"/></a>
                     <a href="https://opiates.garden/" target="_blank"><img src="https://opiates.garden/assets/button5.gif" alt="gibon button"></a>
                     <a href="https://reduxflakes.nekoweb.org" target="_blank"><img src="https://reduxflakes.nekoweb.org/img/hcl6TIROJn-88.webp" alt="tuff button"></a>
                     <a href='https://potentia.moe' target="_blank"><img src='https://potentia.moe/img/tm.gif' title='potentia.moe' alt="potentia button"></a>
-                    <a href="https://districts.nekoweb.org/"><img alt="Nekoweb Districts" src="https://districts.nekoweb.org/img/districts002.png"></a>
-                    <a href="https://jockstar.nekoweb.org/" > <img alt="Jockstar websute button" src="https://jockstar.nekoweb.org/buttons/jsb.gif"> </a>
+                    <a href="https://districts.nekoweb.org/" target="_blank"><img alt="Nekoweb Districts" src="https://districts.nekoweb.org/img/districts002.png"></a>
+                    <a href="https://jockstar.nekoweb.org/" target="_blank"> <img alt="Jockstar websute button" src="https://jockstar.nekoweb.org/buttons/jsb.gif"> </a>
                     <a href="https://mars.nekoweb.org/?button" target="_blank"><img src="https://mars.nekoweb.org/assets/buttons/button0.gif" alt="mars' site" width="88" height="31"></a>
                     <a href="https://gucio.nekoweb.org" target="_blank" ><img src="https://files.catbox.moe/miez0h.png" alt="catbox button"></a>
+                    <a href="https://wiki.nekoweb.org/" target="_blank"><img src="https://wiki.nekoweb.org/button.png" width="81" height="33" alt="Nekoweb Wiki"></a>
+                    <a href="https://cygnicide.nekoweb.org/"><img src="https://cygnicide.nekoweb.org/assets/images/cygnicidebutton.gif" alt="cygnicide website"></a>
                     <a href="https://jbc.lol" target="_blank"><img src="https://jbc.lol/sitebutton2.png" alt="jb's site" style="image-rendering: pixelated;"/></a>
 
                     </div>
@@ -185,7 +186,8 @@
             <h2>Footer</h2>
             <p>@2026 Breetea</p>
             <p> Sound Effects are from Nier Automata, Copyright Platinum Games Inc. </p>
-            <p> The background music is called Mahaline from Girls Frontline made by Vanguard Sound (Check em out they make amazing osts for games)</p>&nbsp;
+            <p> Font 5by7 made by Peter Wiegel (amazing font <3)</p>
+            <p> The background music is called Mahaline from Girls Frontline made by Vanguard Sound</p>&nbsp;
 
 
             <p>This site has <!--# views --> views and <!--# followers --> followers.</p>
