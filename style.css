@@ -256,7 +256,7 @@ section p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 14px;
+    gap: 15px;
     margin: 8px 0;
 }
 
@@ -265,7 +265,7 @@ section p {
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    margin: 8px 0;
+    margin: 10px 0;
 }
 
 .matrix-row p {
@@ -278,7 +278,7 @@ section p {
     object-fit: contain;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .social-icon:hover {

@@ -1,0 +1,61 @@
+
+.anim-typewriter,
+.typewriter {
+    display: inline-block;
+    box-sizing: content-box;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+    border-right: none;
+    animation:
+        typewriter-vertical 2.5s steps(15) 1s 1 normal both,
+        blink-cursor-vertical 1s steps(15) 5 normal;
+}
+
+@keyframes typewriter-vertical {
+    from {
+        height: 0;
+    }
+    to {
+        height: 13.5ch;
+    }
+}
+
+@keyframes blink-cursor-vertical {
+    from {
+        border-bottom-color: rgba(255, 255, 255, 0.5);
+    }
+    to {
+        border-bottom-color: transparent;
+    }
+}
+
+/* Responsive adjustment for mobile screens (horizontal sidebar) */
+@media (max-width: 700px) {
+    .anim-typewriter,
+    .typewriter {
+        border-bottom: none;
+        border-right: 2px solid rgba(255, 255, 255, 0.75);
+        animation:
+            typewriter-horizontal 2.5s steps(15) 1s 1 normal both,
+            blink-cursor-horizontal 500ms steps(15) infinite normal;
+    }
+
+    @keyframes typewriter-horizontal {
+        from {
+            width: 0;
+        }
+        to {
+            width: 15ch;
+        }
+    }
+
+    @keyframes blink-cursor-horizontal {
+        from {
+            border-right-color: rgba(255, 255, 255, 0.75);
+        }
+        to {
+            border-right-color: transparent;
+        }
+    }
+}
