@@ -96,7 +96,7 @@ body {
     order: 2;
 }
 
-/* ── Main Content ────────────────────────────── */
+
 .content {
     flex: 1;
     position: relative;
@@ -104,7 +104,6 @@ body {
     overflow: hidden;
 }
 
-/* ── Spinning Background Image ───────────────── */
 .spin-bg {
     position: fixed;
     top: 50%;
@@ -205,7 +204,7 @@ section p {
 /* ── Mute toggle buttons in sidebar ─────────── */
 .audio-mute-controls {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;   /* side by side */
     gap: 6px;
     width: 100%;
     order: 3;
@@ -213,12 +212,11 @@ section p {
 }
 
 .mute-toggle-btn {
-    display: block;
-    width: 100%;
-    padding: 6px 12px;
+    flex: 1;               /* split width evenly */
+    padding: 6px 8px;
     background-color: #d7d3cc;
     color: #231d1d;
-    text-align: left;
+    text-align: center;
     border: none;
     border-radius: 5px;
     font-size: 0.78rem;
@@ -227,11 +225,21 @@ section p {
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mute-toggle-btn:hover {
     background-color: #e7dede;
     box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.4);
+}
+
+.mute-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
 }
 
 /* ── Remove old centered audio player ─────────── */
@@ -337,7 +345,7 @@ section p {
 /* ── Not Found Section ──────────────────────── */
 .not-found-box {
     background-color: #37312b;
-    padding: 60% 40px;
+    padding: 65% 40px;
     display: flex;
     flex-direction: column;
     align-items: center;

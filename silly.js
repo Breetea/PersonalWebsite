@@ -1,6 +1,5 @@
 // silly.js
 
-
 const sounds = { //sound effects
   click:   new Audio("assets/audio/Nierclick.wav"),
   confirm: new Audio("assets/audio/Nierconfirm.wav"),
@@ -30,9 +29,9 @@ document.addEventListener("click", (e) => {
   playSound(el.dataset.sound);
 });
 
-//audio looper for bg audio
-const AMB_VOLUME    = 0.08;
-const LOOKAHEAD_SEC = 0.3; //preloader of the audio to make it seamless
+// ── Ambient music loop ────────────────────────────────────────────────────────
+const AMB_VOLUME    = 0.05;
+const LOOKAHEAD_SEC = 0.3; // preload next track slightly early for seamless transition
 
 const amb1 = new Audio("assets/audio/New%20Eden%20-%20Am1.mp3");
 const amb2 = new Audio("assets/audio/New%20Eden%20-%20Am2.mp3");
@@ -43,18 +42,16 @@ const amb3 = new Audio("assets/audio/New%20Eden%20-%20Am3.mp3");
   a.volume  = AMB_VOLUME;
 });
 
-
+// neamb1 → neamb2 → neamb3 → neamb2 → neamb3 → …
 const ambNext = new Map([
   [amb1, amb2],
   [amb2, amb3],
   [amb3, amb2],
 ]);
 
-
 let amb1Done = false;
 
 function scheduleNext(current) {
-
   if (current._seamlessWired) return;
   current._seamlessWired = true;
 
@@ -63,13 +60,11 @@ function scheduleNext(current) {
 
     const remaining = current.duration - current.currentTime;
 
-
     if (current === amb1 && amb1Done) return;
 
     if (remaining <= LOOKAHEAD_SEC) {
       const next = ambNext.get(current);
       if (!next) return;
-
 
       current.removeEventListener("timeupdate", onUpdate);
 
@@ -77,9 +72,7 @@ function scheduleNext(current) {
       next.muted = current.muted;
       next.play().catch(() => {});
 
-
       scheduleNext(next);
-
 
       setTimeout(() => {
         current.pause();
@@ -95,33 +88,37 @@ let musicStarted = false;
 function startMusic() {
   if (musicStarted) return;
   musicStarted = true;
-
   scheduleNext(amb1);
   amb1.play().catch(() => {});
 }
 
-
-document.addEventListener("click", startMusic, { once: true });
-
-
+// ── Mute toggles ──────────────────────────────────────────────────────────────
 const musicMuteBtn = document.getElementById("music-mute-btn");
 const sfxMuteBtn   = document.getElementById("sfx-mute-btn");
 
-let musicMuted = false;
+if (musicMuteBtn && sfxMuteBtn) {
+  document.addEventListener("click", startMusic, { once: true });
 
-musicMuteBtn.addEventListener("click", () => {
-  startMusic();
-  musicMuted = !musicMuted;
-  amb1.muted = musicMuted;
-  amb2.muted = musicMuted;
-  amb3.muted = musicMuted;
-  musicMuteBtn.textContent = musicMuted ? "🔇 Music" : "🔊 Music";
-});
+  let musicMuted = false;
 
-sfxMuteBtn.addEventListener("click", () => {
-  sfxMuted = !sfxMuted;
-  sfxMuteBtn.textContent = sfxMuted ? "🔕 SFX" : "🔔 SFX";
-});
+  musicMuteBtn.addEventListener("click", () => {
+    startMusic();
+    musicMuted = !musicMuted;
+    amb1.muted = musicMuted;
+    amb2.muted = musicMuted;
+    amb3.muted = musicMuted;
+    musicMuteBtn.innerHTML = musicMuted
+      ? '<img src="assets/icons/IconMusicMute.png" alt="Music muted" class="mute-icon">'
+      : '<img src="assets/icons/IconMusic.png" alt="Music" class="mute-icon">';
+  });
+
+  sfxMuteBtn.addEventListener("click", () => {
+    sfxMuted = !sfxMuted;
+    sfxMuteBtn.innerHTML = sfxMuted
+      ? '<img src="assets/icons/IconSpeakerMute.png" alt="SFX muted" class="mute-icon">'
+      : '<img src="assets/icons/IconSpeaker.png" alt="SFX" class="mute-icon">';
+  });
+}
 
 
 //thanks percy <3
