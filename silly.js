@@ -1,7 +1,7 @@
 // silly.js
 
-// ── Sound effects ─────────────────────────────────────────────────────────────
-const sounds = {
+
+const sounds = { //sound effects
   click:   new Audio("assets/audio/Nierclick.wav"),
   confirm: new Audio("assets/audio/Nierconfirm.wav"),
   cancel:  new Audio("assets/audio/Niercancel.wav"),
@@ -30,56 +30,87 @@ document.addEventListener("click", (e) => {
   playSound(el.dataset.sound);
 });
 
-// ── Ambient music loop: neamb1 once → loop neamb2/neamb3 ─────────────────────
+//audio looper for bg audio
+const AMB_VOLUME    = 0.08;
+const LOOKAHEAD_SEC = 0.3; //preloader of the audio to make it seamless
+
 const amb1 = new Audio("assets/audio/New%20Eden%20-%20Am1.mp3");
 const amb2 = new Audio("assets/audio/New%20Eden%20-%20Am2.mp3");
 const amb3 = new Audio("assets/audio/New%20Eden%20-%20Am3.mp3");
 
-amb1.preload = "auto";
-amb2.preload = "auto";
-amb3.preload = "auto";
-
-amb1.volume = 0.05;
-amb2.volume = 0.05;
-amb3.volume = 0.05;
-
-// After neamb1 ends, alternate neamb2 → neamb3 → neamb2 → …
-let ambLoopNext = amb2; // first loop track after neamb1
-
-amb1.addEventListener("ended", () => {
-  ambLoopNext.currentTime = 0;
-  ambLoopNext.play().catch(() => {});
+[amb1, amb2, amb3].forEach(a => {
+  a.preload = "auto";
+  a.volume  = AMB_VOLUME;
 });
 
-amb2.addEventListener("ended", () => {
-  amb3.currentTime = 0;
-  amb3.play().catch(() => {});
-});
 
-amb3.addEventListener("ended", () => {
-  amb2.currentTime = 0;
-  amb2.play().catch(() => {});
-});
+const ambNext = new Map([
+  [amb1, amb2],
+  [amb2, amb3],
+  [amb3, amb2],
+]);
+
+
+let amb1Done = false;
+
+function scheduleNext(current) {
+
+  if (current._seamlessWired) return;
+  current._seamlessWired = true;
+
+  current.addEventListener("timeupdate", function onUpdate() {
+    if (!current.duration || current.duration === Infinity) return;
+
+    const remaining = current.duration - current.currentTime;
+
+
+    if (current === amb1 && amb1Done) return;
+
+    if (remaining <= LOOKAHEAD_SEC) {
+      const next = ambNext.get(current);
+      if (!next) return;
+
+
+      current.removeEventListener("timeupdate", onUpdate);
+
+      next.currentTime = 0;
+      next.muted = current.muted;
+      next.play().catch(() => {});
+
+
+      scheduleNext(next);
+
+
+      setTimeout(() => {
+        current.pause();
+        current.currentTime = 0;
+        current._seamlessWired = false;
+      }, Math.max(remaining * 1000 + 200, 0));
+    }
+  });
+}
 
 let musicStarted = false;
 
 function startMusic() {
   if (musicStarted) return;
   musicStarted = true;
+
+  scheduleNext(amb1);
   amb1.play().catch(() => {});
 }
 
-// Start on first user interaction
+
 document.addEventListener("click", startMusic, { once: true });
 
-// ── Mute toggles ──────────────────────────────────────────────────────────────
+
 const musicMuteBtn = document.getElementById("music-mute-btn");
 const sfxMuteBtn   = document.getElementById("sfx-mute-btn");
 
 let musicMuted = false;
 
 musicMuteBtn.addEventListener("click", () => {
-  startMusic(); // ensure music started if this is the first click
+  startMusic();
   musicMuted = !musicMuted;
   amb1.muted = musicMuted;
   amb2.muted = musicMuted;
@@ -92,7 +123,7 @@ sfxMuteBtn.addEventListener("click", () => {
   sfxMuteBtn.textContent = sfxMuted ? "🔕 SFX" : "🔔 SFX";
 });
 
-// ── Misc utilities ────────────────────────────────────────────────────────────
+
 //thanks percy <3
 function copyCode(num) {
   if (num == 1) {
